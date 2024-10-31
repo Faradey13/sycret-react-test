@@ -1,0 +1,51 @@
+.modalMain {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+
+}
+
+.overlay {
+    height: 100%;
+    width: 100%;
+    background: var(--overlay-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content {
+    padding: 20px;
+    border-radius: 12px;
+    background-image: url(../../../dist/static/images/bg2.png);
+    transition: 0.3s transform;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+.opened {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 10000;
+}
+
+.opened.content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.close {
+    opacity: 0;
+    z-index: -1;
+}
+
+.close.content {
+    transform: scale(0.2);
+    opacity: 0;
+}
